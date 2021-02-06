@@ -6,7 +6,7 @@
   "scripts": {
     "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
-  "author": "Fulton",
+  "author": "Fulton Kilebe",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.14.1"
