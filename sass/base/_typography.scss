@@ -4,7 +4,7 @@ body {
     font-size: 16px;
     line-height: 1.7;
     color: $color-grey-dark;
-    padding: 3rem;
+    
     box-sizing: border-box;
 }
 
@@ -22,6 +22,11 @@ body {
         animation-name: MoveInLeft;
         animation-duration: 2s;
         animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        @include respond(phone){
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
     }
 
     &--sub {
@@ -31,6 +36,11 @@ body {
         letter-spacing: 1.75rem;
         animation: MoveInRight 2s;
         animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        @include respond(phone){
+            letter-spacing: .5rem;
+            
+        }
     }
 }
 .heading-secondary{
@@ -44,6 +54,14 @@ body {
     color: transparent;
     letter-spacing: .2rem;
     transition: all .2s;
+
+    @include respond(tab-port){
+        font-size: 3rem;
+    }
+
+    @include respond(phone){
+        font-size: 2.5rem;
+    }
 
     &:hover{
         transform: skewY(2deg) skewX(15deg) scale(1.1);

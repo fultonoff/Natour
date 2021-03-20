@@ -1,10 +1,10 @@
-.card{
+.card {
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
     height: 52rem;
-    
-    &__side{
+
+    &__side {
         height: 52rem;
         transition: all .8s ease;
         position: absolute;
@@ -17,31 +17,31 @@
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
 
-        &--front{
+        &--front {
             background-image: $color-white;
         }
 
-        &--back{
+        &--back {
             transform: rotateY(-180deg);
 
-            &-1{
-                background-image: linear-gradient( to right bottom, $color-secondary-light, $color-secondary-dark);
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
             }
         }
     }
 
-    
 
-    &:hover &__side--front{
+
+    &:hover &__side--front {
         transform: rotateY(-180deg);
-        
+
     }
 
-    &:hover &__side--back{
+    &:hover &__side--back {
         transform: rotateY(0);
     }
 
-    &__picture{
+    &__picture {
 
         background-size: cover;
         height: 23rem;
@@ -51,61 +51,61 @@
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
 
-        &--1{
-            background-image:  linear-gradient( to right bottom, $color-secondary-light, $color-secondary-dark),
-             url(../img/nat-5.jpg);
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+                url(../img/nat-5.jpg);
         }
 
-        &--2{
-            background-image:  linear-gradient( to right bottom, $color-primary, $color-primary-light),
-             url(../img/nat-6.jpg);
+        &--2 {
+            background-image: linear-gradient(to right bottom, $color-primary, $color-primary-light),
+                url(../img/nat-6.jpg);
         }
 
-        &--3{
-            background-image:  linear-gradient( to right bottom, $color-tertiary-dark, $color-tertiary-light),
-             url(../img/nat-7.jpg);
+        &--3 {
+            background-image: linear-gradient(to right bottom, $color-tertiary-dark, $color-tertiary-light),
+                url(../img/nat-7.jpg);
         }
     }
 
-    &__heading{
+    &__heading {
         font-size: 2.8rem;
         font-weight: 300;
         text-transform: uppercase;
         text-align: right;
         color: $color-white;
         position: absolute;
-        top:12rem;
+        top: 12rem;
         right: 2rem;
         width: 75%;
 
     }
 
-    &__heading-span{
+    &__heading-span {
         padding: 1rem 1.5rem;
         -webkit-box-decoration-break: clone;
         box-decoration-break: clone;
 
-        &--1{
-            
-          background-color: #ffffff51;
+        &--1 {
+
+            background-color: #ffffff51;
         }
     }
-    
-    &__details{
+
+    &__details {
         padding: 3rem;
 
-        ul{
+        ul {
             list-style: none;
             width: 80%;
             margin: 0 auto;
 
-            li{
+            li {
 
                 text-align: center;
                 font-size: 1.5rem;
                 padding: 1rem;
 
-                &:not(:last-child){
+                &:not(:last-child) {
                     border-bottom: 1px solid $color-grey-light-2;
                     ;
                 }
@@ -114,8 +114,8 @@
         }
     }
 
-    
-    &__cta{
+
+    &__cta {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -124,22 +124,76 @@
         text-align: center;
     }
 
-    &__price-box{
+    &__price-box {
         text-align: center;
         color: $color-white;
         margin-bottom: 8rem;
     }
 
-    &__price-only{
+    &__price-only {
 
         font-size: 1.4rem;
         text-transform: uppercase;
     }
 
-    &__price-value{
+    &__price-value {
 
         font-size: 6rem;
         font-weight: 100;
-        
+
+    }
+
+    //Media Query
+
+    @include respond(tab-port) {
+
+        height: auto;
+        border-radius: .3rem;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &__side {
+            height: auto;
+            position: relative;
+            box-shadow: none;
+            
+
+            &--back {
+                transform: rotateY(0);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+
+            }
+        }
+
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+
+        }
+
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 7rem 4rem 4rem 4rem;
+
+        }
+
+        &__price-box {
+
+            margin-bottom: 3rem;
+        }
+
+
+        &__price-value {
+
+            font-size: 6rem;
+
+        }
+
+
+
     }
 }
